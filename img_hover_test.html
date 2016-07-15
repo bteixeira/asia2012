@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<style type="text/css">
+
+		.left {
+			float: left;
+		}
+		.right {
+			float: right;
+		}
+		
+.stamp {
+	display: inline-block;
+	padding: 10px;
+	background-image: url('img/fotos/stamp_9.png');
+}
+
+.stamp.large {
+	background-image: url('resources/stamp_large_4.png');
+}
+
+.stamp.pan {
+	background-image: url('resources/stamp_pan_1.png');
+}
+
+.thumbnail {
+	position: relative;
+	display: block;
+}
+
+.thumbnail img {
+	display: block;
+}
+
+.thumbnail:hover:after, .thumbnail:focus:after
+{ font-size: 10px;
+    background: rgba(0,0,0,0.7);
+	left: 0;
+    bottom: 0;
+    content: attr(title);
+    color: #FFF;
+    display: block;
+    /*line-height: 50px;*/
+	line-height: 200%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+#mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0, 0.7);
+	color: red;
+	display: none;
+	z-index: 99;
+	overflow: auto;
+}
+
+#mask .wrapper {
+	margin: 20px;
+}
+
+#mask img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	border: solid 0px #000;
+	outline: solid 20px #000;
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+
+		</style>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script>
+		<script type="text/javascript">
+			function showPhoto() {
+				//alert(this.href);
+				$('#mask img').attr('src', this.href);
+				$('#mask').show();
+				return false;
+			};
+			function setImageClick() {
+				$('.thumbnail').click(showPhoto);
+				
+				$('#mask').click(function() {
+					$('#mask').hide();
+				});
+			};
+				
+			$(document).ready(setImageClick);
+			
+		 </script>
+	</head>
+<body>
+	<div id="mask">
+		<!-- -->
+		<div class="wrapper">
+			<img src="">
+		</div>
+		<!-- -->
+		<!--
+			<div style="background-color: #000; margin: 20px; display: inline-block;">sldjfnkjdf</div>
+		-->
+	</div>
+	<div class="stamp left">
+		<a class="thumbnail" href="img/fotos/P1030740.jpg" title="Primeira impressão de Bangkok:<br>quente, húmida, moderna, humilde">
+			<img src="img/fotos/P1030740_th.jpg"/>
+		</a>
+	</div>
+	<p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum.</p>
+	<div class="stamp large">
+		<a class="thumbnail" href="img/fotos/P1030763.jpg" title="Segunda impressão de Bangkok">
+			<img src="img/fotos/P1030763_th_lg.jpg"/>
+		</a>
+	</div>
+	<div class="stamp pan">
+		<a class="thumbnail" href="img/fotos/P1050351.jpg" title="Terceira impressão de Bangkok">
+			<img src="img/fotos/P1050351_th_pan.jpg"/>
+		</a>
+	</div>
+	<a class="thumbnail" href="img/fotos/P1050351.jpg" title="Terceira impressão de Bangkok">
+		<img src="img/fotos/P1050351_th_pan.jpg"/>
+	</a>
+</body>
+</html>
+
